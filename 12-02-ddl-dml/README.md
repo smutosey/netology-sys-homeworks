@@ -4,8 +4,8 @@
 
 ### Задание 1
 1.1. Поднимите чистый инстанс MySQL версии 8.0+. Можно использовать локальный сервер или контейнер Docker.  
-> [Vagrantfile](https://github.com/smutosey/sys-netology-hw/12-02-ddl-dml/vagrant/Vagrantfile) + [config.sh](https://github.com/smutosey/sys-netology-hw/12-02-ddl-dml/vagrant/config.sh) для создания ВМ, установки Docker и запуска MySQL в контейнере  
-> [docker-compose.yml](https://github.com/smutosey/sys-netology-hw/12-02-ddl-dml/docker-compose.yml) - инструкции для запуска MySQL и инициализации БД   
+> [Vagrantfile](https://github.com/smutosey/sys-netology-hw/blob/main/12-02-ddl-dml/vagrant/Vagrantfile) + [config.sh](https://github.com/smutosey/sys-netology-hw/blob/main/12-02-ddl-dml/vagrant/config.sh) для создания ВМ, установки Docker и запуска MySQL в контейнере  
+> [docker-compose.yml](https://github.com/smutosey/sys-netology-hw/blob/main/12-02-ddl-dml/docker-compose.yml) - инструкции для запуска MySQL и инициализации БД   
 
 1.2. Создайте учётную запись sys_temp. 
 > ```sql
@@ -16,7 +16,7 @@
 > ```sql
 > select * from mysql.user;
 > ```  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-02-ddl-dml/img/1-03.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-02-ddl-dml/img/1-03.png)  
 
 1.4. Дайте все права для пользователя sys_temp.   
 > ```sql
@@ -27,19 +27,19 @@
 > ```sql
 > show grants for 'sys_temp'@'%';
 > ``` 
-> ![img](https://github.com/smutosey/sys-netology-hw/12-02-ddl-dml/img/1-05.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-02-ddl-dml/img/1-05.png)  
 
 1.6. Переподключитесь к базе данных от имени sys_temp.  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-02-ddl-dml/img/1-06.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-02-ddl-dml/img/1-06.png)  
 
 1.7. По ссылке https://downloads.mysql.com/docs/sakila-db.zip скачайте дамп базы данных.  
 
 1.8. Восстановите дамп в базу данных.
-> ![img](https://github.com/smutosey/sys-netology-hw/12-02-ddl-dml/img/1-08.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-02-ddl-dml/img/1-08.png)  
 
 1.9. При работе в IDE сформируйте ER-диаграмму получившейся базы данных. При работе в командной строке используйте команду для получения всех таблиц базы данных. (скриншот)  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-02-ddl-dml/img/1-09.png)  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-02-ddl-dml/img/1-09-2.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-02-ddl-dml/img/1-09.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-02-ddl-dml/img/1-09-2.png)  
 
 
 *Результатом работы должны быть скриншоты обозначенных заданий, а также простыня со всеми запросами.*
@@ -72,9 +72,9 @@ customer         | customer_id
 > ```   
 > 
 > Скриншот:  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-02-ddl-dml/img/2-01.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-02-ddl-dml/img/2-01.png) 
 >   
-> Полученная таблица, выгруженная из IDE DBeaver: [туть](https://github.com/smutosey/sys-netology-hw/12-02-databases/nedorezov_202303121953-1678625633403.csv) 
+> Полученная таблица, выгруженная из IDE DBeaver: [туть](https://github.com/smutosey/sys-netology-hw/blob/main/12-02-databases/nedorezov_202303121953-1678625633403.csv) 
 
 
 
@@ -97,5 +97,5 @@ customer         | customer_id
 > revoke INSERT, UPDATE, DELETE on sakila.* from 'sys_temp'@'%' --отзываем доступ к внесению, изменению и удалению данных в БД sakila
 > ``` 
 > Результат выполнения и список прав:
-> ![img](https://github.com/smutosey/sys-netology-hw/12-02-ddl-dml/img/3-01.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-02-ddl-dml/img/3-01.png)  
 > Видно, что нет доступа на INSERT, UPDATE, DELETE в sakila 

@@ -47,9 +47,9 @@ systemctl restart zabbix-server zabbix-agent nginx php8.1-fpm
 systemctl enable zabbix-server zabbix-agent nginx php8.1-fpm
 ```
 9. Успешная установка:
-![image](https://github.com/smutosey/sys-netology-hw/09-02-zabbix-part-one/img/01-1.png)
+![image](https://github.com/smutosey/sys-netology-hw/blob/main/09-02-zabbix-part-one/img/01-1.png)
 10. Авторизация в админке:
-![image](https://github.com/smutosey/sys-netology-hw/09-02-zabbix-part-one/img/01-2.png)
+![image](https://github.com/smutosey/sys-netology-hw/blob/main/09-02-zabbix-part-one/img/01-2.png)
 
 ---
 
@@ -84,13 +84,13 @@ systemctl restart zabbix-agent
 systemctl enable zabbix-agent
 ```
 5. Скриншот раздела Configuration > Hosts на сервере:
-![image](https://github.com/smutosey/sys-netology-hw/09-02-zabbix-part-one/img/02-1.png)
+![image](https://github.com/smutosey/sys-netology-hw/blob/main/09-02-zabbix-part-one/img/02-1.png)
 6. Скриншот лога zabbix agent с дебагом соединения:
-![image](https://github.com/smutosey/sys-netology-hw/09-02-zabbix-part-one/img/02-2.png)
+![image](https://github.com/smutosey/sys-netology-hw/blob/main/09-02-zabbix-part-one/img/02-2.png)
 7. Скриншот раздела Monitoring > Latest data для обоих хостов, видны поступающие от агентов данные
-![image](https://github.com/smutosey/sys-netology-hw/09-02-zabbix-part-one/img/02-3.png)
+![image](https://github.com/smutosey/sys-netology-hw/blob/main/09-02-zabbix-part-one/img/02-3.png)
 8. Пример сконфигурированного дашборда
-![image](https://github.com/smutosey/sys-netology-hw/09-02-zabbix-part-one/img/02-4.png)
+![image](https://github.com/smutosey/sys-netology-hw/blob/main/09-02-zabbix-part-one/img/02-4.png)
 
 
 
@@ -106,8 +106,8 @@ systemctl enable zabbix-agent
 1. Установка Zabbix-агента на windows происходит через .msi-пакет, скачанный с сайта.
 2. При инсталляции указывается адрес ```Zabbix Server = 192.168.0.106```
 3. На сервере добавил хост Windows, с шаблоном ```Windows filesystems by Zabbix agent```
-![image](https://github.com/smutosey/sys-netology-hw/09-02-zabbix-part-one/img/03-1.png)
+![image](https://github.com/smutosey/sys-netology-hw/blob/main/09-02-zabbix-part-one/img/03-1.png)
 4. В шаблоне есть discovery rule "Mounted filesystem discovery", и по нему Items создаются только Space utilization, Total space и Used space, поэтому, чтобы видеть именно свободное место дисков, решил добавить в этот же шаблон новый item Free Space с ключом ```vfs.fs.size[{#FSNAME},pfree]```
 5. Полученные данные в Latest Data:
-![image](https://github.com/smutosey/sys-netology-hw/09-02-zabbix-part-one/img/03-2.png)
+![image](https://github.com/smutosey/sys-netology-hw/blob/main/09-02-zabbix-part-one/img/03-2.png)
 

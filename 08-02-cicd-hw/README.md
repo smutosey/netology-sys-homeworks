@@ -14,21 +14,21 @@
 
 #### *Настройки проекта:*
 Описание:
-![Описание](https://github.com/smutosey/sys-netology-hw/08-02-cicd-hw/img/screen-1.png)
+![Описание](https://github.com/smutosey/sys-netology-hw/blob/main/08-02-cicd-hw/img/screen-1.png)
 SCM:
-![SCM](https://github.com/smutosey/sys-netology-hw/08-02-cicd-hw/img/screen-2.png)
+![SCM](https://github.com/smutosey/sys-netology-hw/blob/main/08-02-cicd-hw/img/screen-2.png)
 Триггеры сборки:
-![Триггеры сборки](https://github.com/smutosey/sys-netology-hw/08-02-cicd-hw/img/screen-3.png)
+![Триггеры сборки](https://github.com/smutosey/sys-netology-hw/blob/main/08-02-cicd-hw/img/screen-3.png)
 Шаги сборки:
-![Шаги сборки](https://github.com/smutosey/sys-netology-hw/08-02-cicd-hw/img/screen-4.png)
+![Шаги сборки](https://github.com/smutosey/sys-netology-hw/blob/main/08-02-cicd-hw/img/screen-4.png)
 
 #### *Результат сборки:*
 Статус пайплайна:
-![Статус пайплайна](https://github.com/smutosey/sys-netology-hw/08-02-cicd-hw/img/screen-6.png)
+![Статус пайплайна](https://github.com/smutosey/sys-netology-hw/blob/main/08-02-cicd-hw/img/screen-6.png)
 Конец лога:
-![Конец лога](https://github.com/smutosey/sys-netology-hw/08-02-cicd-hw/img/screen-7.png)
+![Конец лога](https://github.com/smutosey/sys-netology-hw/blob/main/08-02-cicd-hw/img/screen-7.png)
 Собранный image в Docker:
-![image](https://github.com/smutosey/sys-netology-hw/08-02-cicd-hw/img/screen-5.png)
+![image](https://github.com/smutosey/sys-netology-hw/blob/main/08-02-cicd-hw/img/screen-5.png)
 
 ---
 
@@ -64,9 +64,9 @@ pipeline {
 ```
 #### *Результат сборки:*
 Статус пайплайна:
-![Статус пайплайна](https://github.com/smutosey/sys-netology-hw/08-02-cicd-hw/img/2-screen-1.png)
+![Статус пайплайна](https://github.com/smutosey/sys-netology-hw/blob/main/08-02-cicd-hw/img/2-screen-1.png)
 Собранный image в Docker:
-![image-2](https://github.com/smutosey/sys-netology-hw/08-02-cicd-hw/img/2-screen-2.png)
+![image-2](https://github.com/smutosey/sys-netology-hw/blob/main/08-02-cicd-hw/img/2-screen-2.png)
 
 ---
 
@@ -80,7 +80,7 @@ pipeline {
 
 ### Ответ
 Репозиторий:
-![image-1](https://github.com/smutosey/sys-netology-hw/08-02-cicd-hw/img/3-screen-1.png)
+![image-1](https://github.com/smutosey/sys-netology-hw/blob/main/08-02-cicd-hw/img/3-screen-1.png)
 Пайплайн:
 ```Groovy
 pipeline {
@@ -107,9 +107,9 @@ pipeline {
 ```
 #### *Результат сборки*
 Прогон пайплайна:
-![image-2](https://github.com/smutosey/sys-netology-hw/08-02-cicd-hw/img/3-screen-2.png)
+![image-2](https://github.com/smutosey/sys-netology-hw/blob/main/08-02-cicd-hw/img/3-screen-2.png)
 Приложение в репозитории:
-![image-3](https://github.com/smutosey/sys-netology-hw/08-02-cicd-hw/img/3-screen-3.png)
+![image-3](https://github.com/smutosey/sys-netology-hw/blob/main/08-02-cicd-hw/img/3-screen-3.png)
 
 
 ---
@@ -131,6 +131,6 @@ stage('Build go app and push to Nexus repo') {
 ```
 #### *Результат сборки*
 Несколько запусков пайплайна:
-![image-1](https://github.com/smutosey/sys-netology-hw/08-02-cicd-hw/img/4-screen-1.png)
+![image-1](https://github.com/smutosey/sys-netology-hw/blob/main/08-02-cicd-hw/img/4-screen-1.png)
 Версионирование приложения в репозитории:
-![image-2](https://github.com/smutosey/sys-netology-hw/08-02-cicd-hw/img/4-screen-2.png)
+![image-2](https://github.com/smutosey/sys-netology-hw/blob/main/08-02-cicd-hw/img/4-screen-2.png)

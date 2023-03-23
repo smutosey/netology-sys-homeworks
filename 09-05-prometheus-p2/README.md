@@ -11,7 +11,7 @@
 
 ### Ответ
 
-![img](https://github.com/smutosey/sys-netology-hw/09-05-prometheus-p2/img/01-1.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/09-05-prometheus-p2/img/01-1.png)
 
 ---
 
@@ -24,10 +24,10 @@
 ### Ответ
 
 Alerts из Prometheus в статусе Fireing:
-![img](https://github.com/smutosey/sys-netology-hw/09-05-prometheus-p2/img/02-1.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/09-05-prometheus-p2/img/02-1.png)
 
 Оповещение в Alertmanager:
-![img](https://github.com/smutosey/sys-netology-hw/09-05-prometheus-p2/img/02-2.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/09-05-prometheus-p2/img/02-2.png)
 
 ---
 
@@ -40,10 +40,10 @@ Alerts из Prometheus в статусе Fireing:
 ### Ответ
 
 Эндпоинт с метриками Docker: 
-![img](https://github.com/smutosey/sys-netology-hw/09-05-prometheus-p2/img/03-1.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/09-05-prometheus-p2/img/03-1.png)
 
 Список таргетов в Prometheus: 
-![img](https://github.com/smutosey/sys-netology-hw/09-05-prometheus-p2/img/03-2.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/09-05-prometheus-p2/img/03-2.png)
 
 ---
 
@@ -56,4 +56,4 @@ Alerts из Prometheus в статусе Fireing:
 ### Ответ
 
 Кастомный дашборд:
-![img](https://github.com/smutosey/sys-netology-hw/09-05-prometheus-p2/img/04-1.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/09-05-prometheus-p2/img/04-1.png)

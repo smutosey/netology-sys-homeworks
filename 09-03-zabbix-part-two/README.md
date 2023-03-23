@@ -10,7 +10,7 @@
 
 ### Ответ
 
-![image](https://github.com/smutosey/sys-netology-hw/09-03-zabbix-part-two/img/01-1.png)
+![image](https://github.com/smutosey/sys-netology-hw/blob/main/09-03-zabbix-part-two/img/01-1.png)
 
 ---
 
@@ -30,7 +30,7 @@
 
 ### Ответ
 
-![image](https://github.com/smutosey/sys-netology-hw/09-03-zabbix-part-two/img/03-1.png)
+![image](https://github.com/smutosey/sys-netology-hw/blob/main/09-03-zabbix-part-two/img/03-1.png)
 
 ---
 
@@ -43,7 +43,7 @@
 
 ### Ответ
 
-![image](https://github.com/smutosey/sys-netology-hw/09-03-zabbix-part-two/img/04-1.png)
+![image](https://github.com/smutosey/sys-netology-hw/blob/main/09-03-zabbix-part-two/img/04-1.png)
 
 ---
 ---
@@ -60,13 +60,13 @@
 ### Ответ
 
 Настроенный линк между хостами на карте:
-![image](https://github.com/smutosey/sys-netology-hw/09-03-zabbix-part-two/img/05-1.png)
+![image](https://github.com/smutosey/sys-netology-hw/blob/main/09-03-zabbix-part-two/img/05-1.png)
 
 Выключил на netology-as-2 сервис zabbix-agent:
-![image](https://github.com/smutosey/sys-netology-hw/09-03-zabbix-part-two/img/05-2.png)
+![image](https://github.com/smutosey/sys-netology-hw/blob/main/09-03-zabbix-part-two/img/05-2.png)
 
 Через 3 минуты на дашборде можно увидеть сработку триггера и порождённую проблему:
-![image](https://github.com/smutosey/sys-netology-hw/09-03-zabbix-part-two/img/05-3.png)
+![image](https://github.com/smutosey/sys-netology-hw/blob/main/09-03-zabbix-part-two/img/05-3.png)
 
 ---
 
@@ -80,7 +80,7 @@
 
 ### Ответ
 
-Ссылка на скрипт: [bash script](https://github.com/smutosey/sys-netology-hw/09-03-zabbix-part-two/task6_nedorezov.sh)
+Ссылка на скрипт: [bash script](https://github.com/smutosey/sys-netology-hw/blob/main/09-03-zabbix-part-two/task6_nedorezov.sh)
 
 ```bash
 #!/bin/bash
@@ -96,10 +96,10 @@ fi
 ```
 
 Настройка на агентах: 
-![agents](https://github.com/smutosey/sys-netology-hw/09-03-zabbix-part-two/img/06-1.png)
+![agents](https://github.com/smutosey/sys-netology-hw/blob/main/09-03-zabbix-part-two/img/06-1.png)
 
 Результат в Latest Data: 
-![latest data](https://github.com/smutosey/sys-netology-hw/09-03-zabbix-part-two/img/06-2.png)
+![latest data](https://github.com/smutosey/sys-netology-hw/blob/main/09-03-zabbix-part-two/img/06-2.png)
 
 ---
 
@@ -114,7 +114,7 @@ fi
 
 ### Ответ
 
-Ссылка на скрипт: [python script](https://github.com/smutosey/sys-netology-hw/09-03-zabbix-part-two/task7_nedorezov.py)
+Ссылка на скрипт: [python script](https://github.com/smutosey/sys-netology-hw/blob/main/09-03-zabbix-part-two/task7_nedorezov.py)
 
 ```python
 # только python 3.10+
@@ -148,10 +148,10 @@ check(sys.argv)
 ```
 
 Конфигурация агентов:
-![agents](https://github.com/smutosey/sys-netology-hw/09-03-zabbix-part-two/img/07-1.png)
+![agents](https://github.com/smutosey/sys-netology-hw/blob/main/09-03-zabbix-part-two/img/07-1.png)
 
 Результат в Latest Data: 
-![latest data](https://github.com/smutosey/sys-netology-hw/09-03-zabbix-part-two/img/07-2.png)
+![latest data](https://github.com/smutosey/sys-netology-hw/blob/main/09-03-zabbix-part-two/img/07-2.png)
 
 ---
 
@@ -164,13 +164,13 @@ check(sys.argv)
 ### Ответ
 
 Настройка Discovery Actions:
-![image](https://github.com/smutosey/sys-netology-hw/09-03-zabbix-part-two/img/08-1.png)
+![image](https://github.com/smutosey/sys-netology-hw/blob/main/09-03-zabbix-part-two/img/08-1.png)
 
 Настройка Discovery Rules:
-![image](https://github.com/smutosey/sys-netology-hw/09-03-zabbix-part-two/img/08-3.png)
+![image](https://github.com/smutosey/sys-netology-hw/blob/main/09-03-zabbix-part-two/img/08-3.png)
 
 Обнаруженные хосты в Discovery:
-![image](https://github.com/smutosey/sys-netology-hw/09-03-zabbix-part-two/img/08-2.png)
+![image](https://github.com/smutosey/sys-netology-hw/blob/main/09-03-zabbix-part-two/img/08-2.png)
 
 ---
 
@@ -183,10 +183,10 @@ check(sys.argv)
 ### Ответ
 
 Ссылки на файлы в репозитории:
-1. [Vagrantfile](https://github.com/smutosey/sys-netology-hw/09-03-zabbix-part-two/Vagrantfile). Изменения: 
+1. [Vagrantfile](https://github.com/smutosey/sys-netology-hw/blob/main/09-03-zabbix-part-two/Vagrantfile). Изменения: 
 * Скорректировал в virt_machines имя хостов и присваиваемый IP
 * использование параметра ZABBIX_SERVER_IP в конфигурации, изменил сам IP сервера
 
-2. [zabbix-agent.sh](https://github.com/smutosey/sys-netology-hw/09-03-zabbix-part-two/zabbix-agent.sh). Изменения: 
+2. [zabbix-agent.sh](https://github.com/smutosey/sys-netology-hw/blob/main/09-03-zabbix-part-two/zabbix-agent.sh). Изменения: 
 * Добавление конфигурации в каталоге /etc/zabbix/zabbix_agentd.d/ - task6_nedorezov.conf  и task7_nedorezov.conf
 * Создание скриптов для UserParameters в /etc/zabbix - task6_nedorezov.sh и task7_nedorezov.py

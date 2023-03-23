@@ -42,20 +42,20 @@
 *Приложите скриншоты конфигурации, выполнения работы: состояния и режимы работы серверов.*
 
 > #### Ответ:
-> Запустил master и slave через [docker-compose.yml](https://github.com/smutosey/sys-netology-hw/12-06-replica1/master-slave/docker-compose.yml)  
-> Сразу в контейнеры прокинул конфигурацию [master.cnf](https://github.com/smutosey/sys-netology-hw/12-06-replica1/master-slave/master.cnf) и [slave.cnf](https://github.com/smutosey/sys-netology-hw/12-06-replica1/master-slave/slave.cnf)   
-> Настройку master и slave выполнял через [setup.sh](https://github.com/smutosey/sys-netology-hw/12-06-replica1/master-slave/setup.sh)  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-06-replica1/img/2-docker-status.png)
+> Запустил master и slave через [docker-compose.yml](https://github.com/smutosey/sys-netology-hw/blob/main/12-06-replica1/master-slave/docker-compose.yml)  
+> Сразу в контейнеры прокинул конфигурацию [master.cnf](https://github.com/smutosey/sys-netology-hw/blob/main/12-06-replica1/master-slave/master.cnf) и [slave.cnf](https://github.com/smutosey/sys-netology-hw/blob/main/12-06-replica1/master-slave/slave.cnf)   
+> Настройку master и slave выполнял через [setup.sh](https://github.com/smutosey/sys-netology-hw/blob/main/12-06-replica1/master-slave/setup.sh)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-06-replica1/img/2-docker-status.png)
 > Статус мастера:  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-06-replica1/img/2-master-status.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-06-replica1/img/2-master-status.png)  
 > Статус слейва:  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-06-replica1/img/2-slave-status.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-06-replica1/img/2-slave-status.png)  
 > На мастере создал таблицу в БД:
-> ![img](https://github.com/smutosey/sys-netology-hw/12-06-replica1/img/2-create-table.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-06-replica1/img/2-create-table.png) 
 > Подключился к slave, проверил, что таблица реплицировалась: 
-> ![img](https://github.com/smutosey/sys-netology-hw/12-06-replica1/img/2-table-on-slave.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-06-replica1/img/2-table-on-slave.png) 
 > Можно также проверить логи relay на слейве:
-> ![img](https://github.com/smutosey/sys-netology-hw/12-06-replica1/img/2-relay-log.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-06-replica1/img/2-relay-log.png) 
 > 
 
 ---
@@ -67,14 +67,14 @@
 
 *Приложите скриншоты конфигурации, выполнения работы: состояния и режимы работы серверов.*
 
-> Запустил master-one и master-two через [docker-compose.yml](https://github.com/smutosey/sys-netology-hw/12-06-replica1/master-master/docker-compose.yml)   
-> Сразу в контейнеры прокинул конфигурацию [master-one.cnf](https://github.com/smutosey/sys-netology-hw/12-06-replica1/master-master/master-one.cnf) и [master-two.cnf](https://github.com/smutosey/sys-netology-hw/12-06-replica1/master-master/master-two.cnf)  
-> Настройку master-one и master-two выполнял через [setup.sh](https://github.com/smutosey/sys-netology-hw/12-06-replica1/master-master/setup.sh)  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-06-replica1/img/3-01-status.png)  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-06-replica1/img/3-02-status.png)  
-> Проверку выполнял через [check.sh](https://github.com/smutosey/sys-netology-hw/12-06-replica1/master-master/check.sh):  
+> Запустил master-one и master-two через [docker-compose.yml](https://github.com/smutosey/sys-netology-hw/blob/main/12-06-replica1/master-master/docker-compose.yml)   
+> Сразу в контейнеры прокинул конфигурацию [master-one.cnf](https://github.com/smutosey/sys-netology-hw/blob/main/12-06-replica1/master-master/master-one.cnf) и [master-two.cnf](https://github.com/smutosey/sys-netology-hw/blob/main/12-06-replica1/master-master/master-two.cnf)  
+> Настройку master-one и master-two выполнял через [setup.sh](https://github.com/smutosey/sys-netology-hw/blob/main/12-06-replica1/master-master/setup.sh)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-06-replica1/img/3-01-status.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-06-replica1/img/3-02-status.png)  
+> Проверку выполнял через [check.sh](https://github.com/smutosey/sys-netology-hw/blob/main/12-06-replica1/master-master/check.sh):  
 >   * на master-one создаем таблицу  
 >   * на master-two делаем insert в таблицу  
 >   * на master-one селектим данные из таблицы  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-06-replica1/img/3-check.png)  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-06-replica1/img/3-check-another.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-06-replica1/img/3-check.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-06-replica1/img/3-check-another.png)  

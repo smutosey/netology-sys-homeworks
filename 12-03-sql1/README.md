@@ -17,7 +17,7 @@
 >   and position(' ' in addr.district) = 0
 > 
 > ```  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-03-sql1/img/1-01.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-03-sql1/img/1-01.png)  
 
 ### Задание 2
 
@@ -33,7 +33,7 @@
 > 	pay.payment_date between "2005-06-15 00:00:00" and "2005-06-18 23:59:59"
 > 	and pay.amount > 10
 > ```  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-03-sql1/img/2-01.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-03-sql1/img/2-01.png) 
 
 
 ### Задание 3
@@ -55,7 +55,7 @@
 > 	rent.rental_date desc
 > limit 5
 > ```  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-03-sql1/img/3-01.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-03-sql1/img/3-01.png) 
 
 ### Задание 4
 
@@ -80,7 +80,7 @@
 > 	lower(c.first_name) in ('kelly', 'willie')
 > 	and c.active
 > ```  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-03-sql1/img/4-01.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-03-sql1/img/4-01.png) 
 
 ### Задание 5*
 
@@ -94,7 +94,7 @@
 > from
 > 	sakila.customer c;
 > ```  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-03-sql1/img/5-01.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-03-sql1/img/5-01.png) 
 
 
 ### Задание 6*
@@ -115,4 +115,4 @@
 > from
 > 	sakila.customer c;
 > ```  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-03-sql1/img/6-01.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-03-sql1/img/6-01.png) 

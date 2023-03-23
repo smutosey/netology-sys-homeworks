@@ -86,8 +86,8 @@
 > Для обеспечения отказоустойчивости необходимо резервировать сервера баз данных с помощью репликации master-slave. 
 > В таком случае, каждый шард будет иметь резервный сервер с копией данных.
 > Блок-схемы:
-> > ![img](https://github.com/smutosey/sys-netology-hw/12-07-replica2/img/2-01.png)  
-> > ![img](https://github.com/smutosey/sys-netology-hw/12-07-replica2/img/2-02.png)  
+> > ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-07-replica2/img/2-01.png)  
+> > ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-07-replica2/img/2-02.png)  
 
 
 ---

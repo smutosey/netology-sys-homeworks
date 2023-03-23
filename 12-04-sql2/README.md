@@ -36,7 +36,7 @@
 > JOIN sakila.city city ON
 > 	addr.city_id = city.city_id
 > ```
-> ![img](https://github.com/smutosey/sys-netology-hw/12-04-sql2/img/1-02.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-04-sql2/img/1-02.png)  
 >
 > Вариант 2. Некрасивый, но дешевле по плану запроса
 > ```sql
@@ -73,7 +73,7 @@
 > 	having
 > 		count(1) > 300)
 > ```  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-04-sql2/img/1-03.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-04-sql2/img/1-03.png)  
 
 
 ### Задание 2
@@ -93,7 +93,7 @@
 > 	from
 > 		sakila.film f )
 > ```  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-04-sql2/img/2-01.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-04-sql2/img/2-01.png)  
 
 
 ### Задание 3
@@ -111,7 +111,7 @@
 > order by count(*) desc
 > LIMIT 1
 > ```  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-04-sql2/img/3-01.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-04-sql2/img/3-01.png)  
 
 
 ### Задание 4*
@@ -140,7 +140,7 @@
 > 		p.staff_id) p on
 > 	p.staff_id = s.staff_id
 > ```  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-04-sql2/img/4-01.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-04-sql2/img/4-01.png) 
 > 
 > Но, как будто бы такая система премирования не совсем правильная :) Введем месячную премию с учетом суммы продаж:  
 > ```sql
@@ -169,7 +169,7 @@
 > 		date_format(p.payment_date, '%Y-%m')) p on
 > 	p.staff_id = s.staff_id
 > ``` 
-> ![img](https://github.com/smutosey/sys-netology-hw/12-04-sql2/img/4-02.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-04-sql2/img/4-02.png) 
 
 ### Задание 5*
 
@@ -190,4 +190,4 @@
 > 	left join sakila.inventory i on
 > 		i.inventory_id = r.inventory_id)
 > ```  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-04-sql2/img/5-01.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-04-sql2/img/5-01.png) 

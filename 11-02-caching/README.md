@@ -28,9 +28,9 @@
 *Приведите скриншот systemctl status memcached, где будет видно, что memcached запущен.*
 
 > #### Ответ:
-> Написал [Vagrantfile](https://github.com/smutosey/sys-netology-hw/11-02-caching/Vagrantfile) для развертывания ВМ и [config.sh](https://github.com/smutosey/sys-netology-hw/11-02-caching/config.sh) для настройки Memcached и Redis актуальных версий.  
+> Написал [Vagrantfile](https://github.com/smutosey/sys-netology-hw/blob/main/11-02-caching/Vagrantfile) для развертывания ВМ и [config.sh](https://github.com/smutosey/sys-netology-hw/blob/main/11-02-caching/config.sh) для настройки Memcached и Redis актуальных версий.  
 > Статус сервиса Memcached:  
-> ![img](https://github.com/smutosey/sys-netology-hw/11-02-caching/img/2-01.png)
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-02-caching/img/2-01.png)
 > 
 
 ---
@@ -43,9 +43,9 @@
 
 > #### Ответ:
 > Добавил ключи key-1 и key-2 с произвольными значениями, при запросе значения через get они уже были удалены:  
-> ![img](https://github.com/smutosey/sys-netology-hw/11-02-caching/img/3-01.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-02-caching/img/3-01.png)  
 > Для примера, добавил ключ-значение с TTL 15 и попробовал его запрашивать, через время он удалился:  
-> ![img](https://github.com/smutosey/sys-netology-hw/11-02-caching/img/3-02.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-02-caching/img/3-02.png)  
 
 ---
 
@@ -57,11 +57,11 @@
 
 > #### Ответ:
 > Статус сервиса и проверка PING:  
-> ![img](https://github.com/smutosey/sys-netology-hw/11-02-caching/img/4-01.png)    
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-02-caching/img/4-01.png)    
 > Запись в базу:  
-> ![img](https://github.com/smutosey/sys-netology-hw/11-02-caching/img/4-02.png)   
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-02-caching/img/4-02.png)   
 > Чтение ключей в базе:  
-> ![img](https://github.com/smutosey/sys-netology-hw/11-02-caching/img/4-03.png)    
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-02-caching/img/4-03.png)    
 >
 
 ---
@@ -74,7 +74,7 @@
 
 > #### Ответ:
 > Можно воспользоваться командой INCRBY:  
-> ![img](https://github.com/smutosey/sys-netology-hw/11-02-caching/img/5-01.png)    
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-02-caching/img/5-01.png)    
 > 
 
 

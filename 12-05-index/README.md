@@ -13,7 +13,7 @@
 > where
 > 	t.TABLE_SCHEMA = 'sakila'
 > ```
->  ![img](https://github.com/smutosey/sys-netology-hw/12-05-index/img/1-01.png) 
+>  ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-05-index/img/1-01.png) 
 
 
 ### Задание 2
@@ -25,7 +25,7 @@ from payment p, rental r, customer c, inventory i, film f
 where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and r.customer_id = c.customer_id and i.inventory_id = r.inventory_id
 ``` 
 > Выборка заняла почти 7 секунд:
-> ![img](https://github.com/smutosey/sys-netology-hw/12-05-index/img/2-00.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-05-index/img/2-00.png) 
 
 - перечислите узкие места; 
 - оптимизируйте запрос: внесите корректировки по использованию операторов, при необходимости добавьте индексы.  
@@ -59,8 +59,8 @@ where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and
 > 	p.customer_id
 > ```
 > Выборка за 3,5 мс:
-> ![img](https://github.com/smutosey/sys-netology-hw/12-05-index/img/2-01.png) 
-> ![img](https://github.com/smutosey/sys-netology-hw/12-05-index/img/2-02.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-05-index/img/2-01.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-05-index/img/2-02.png) 
 > 
 > 2. Выборка за дату сумм платежей за аренду фильма, которые были внесены клиентами в > день взятия в аренду, в разрезе клиентов и фильмов. Результат выборки не совпадает с > изначальным.
 > ```sql
@@ -83,8 +83,8 @@ where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and
 > 	and p.payment_date < date_add('2005-07-30', INTERVAL 1 DAY)
 > ```
 > Выборка за 6,7 мс:
-> ![img](https://github.com/smutosey/sys-netology-hw/12-05-index/img/2-03.png)  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-05-index/img/2-04.png)   
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-05-index/img/2-03.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-05-index/img/2-04.png)   
 > 
 
 ### Задание 3*

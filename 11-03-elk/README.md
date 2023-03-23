@@ -7,10 +7,10 @@
 
 > #### Ответ:
 > Статус сервиса elastic: 
-> ![img](https://github.com/smutosey/sys-netology-hw/11-03-elk/img/1-01.png)   
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-03-elk/img/1-01.png)   
 >    
 > Результат health check команды: 
-> ![img](https://github.com/smutosey/sys-netology-hw/11-03-elk/img/1-02.png)    
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-03-elk/img/1-02.png)    
 >
 
 ---
@@ -22,7 +22,7 @@
 *Приведите скриншот интерфейса Kibana на странице http://<ip вашего сервера>:5601/app/dev_tools#/console, где будет выполнен запрос GET /_cluster/health?pretty*.
 
 > #### Ответ:
-> ![img](https://github.com/smutosey/sys-netology-hw/11-03-elk/img/2-01.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-03-elk/img/2-01.png)  
 >    
 
 
@@ -99,10 +99,10 @@
 > ```  
 > 
 > Добавил пользователя logstash_internal, настроил роли и привелегии. Добавил Data  View:  
-> ![img](https://github.com/smutosey/sys-netology-hw/11-03-elk/img/3-02.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-03-elk/img/3-02.png) 
 > 
 > Логи NGINX в интерфейсе Kibana
-> ![img](https://github.com/smutosey/sys-netology-hw/11-03-elk/img/3-01.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-03-elk/img/3-01.png) 
 
 ---
 
@@ -141,7 +141,7 @@
 >         error_log /var/log/nginx/error.log;
 > ```
 > Логи NGINX в интерфейсе Kibana с тегом nginx-from-filebeat
-> ![img](https://github.com/smutosey/sys-netology-hw/11-03-elk/img/4-01.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-03-elk/img/4-01.png) 
 
 ---
 
@@ -153,13 +153,13 @@
 *Приведите скриншот интерфейса Kibana, на котором будет виден этот лог и напишите лог какого приложения отправляется.*
 
 > #### Ответ:
-> Установил MongoDB. В Filebeat активировал модуль MongoDB: [/etc/filebeat/modules.d/mongodb.yml](https://github.com/smutosey/sys-netology-hw/11-03-elk/configs/filebeat/mongodb.yml)  
+> Установил MongoDB. В Filebeat активировал модуль MongoDB: [/etc/filebeat/modules.d/mongodb.yml](https://github.com/smutosey/sys-netology-hw/blob/main/11-03-elk/configs/filebeat/mongodb.yml)  
 >  
-> Также перенес input NGINX в отдельный модуль, чтобы разделять потоки по events: [/etc/filebeat/modules.d/nginx.yml](https://github.com/smutosey/sys-netology-hw/11-03-elk/configs/filebeat/nginx.yml)   
+> Также перенес input NGINX в отдельный модуль, чтобы разделять потоки по events: [/etc/filebeat/modules.d/nginx.yml](https://github.com/smutosey/sys-netology-hw/blob/main/11-03-elk/configs/filebeat/nginx.yml)   
 >    
-> Настройки logstash: [/etc/logstash/conf.d/filebeat.conf](https://github.com/smutosey/sys-netology-hw/11-03-elk/configs/logstash/from-filebeat.conf)   
+> Настройки logstash: [/etc/logstash/conf.d/filebeat.conf](https://github.com/smutosey/sys-netology-hw/blob/main/11-03-elk/configs/logstash/from-filebeat.conf)   
 > 
 > Логи mongodb и nginx из Filebeat в интерфейсе Kibana:  
-> ![img](https://github.com/smutosey/sys-netology-hw/11-03-elk/img/5-01.png)  
-> ![img](https://github.com/smutosey/sys-netology-hw/11-03-elk/img/5-02.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-03-elk/img/5-01.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-03-elk/img/5-02.png) 
 > 

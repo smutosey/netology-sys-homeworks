@@ -11,16 +11,16 @@
 ### Ответ
 
 Конфигурация node-1
-![img](https://github.com/smutosey/sys-netology-hw/10-01-keepalived-vrrp/img/01-5.png)
-![img](https://github.com/smutosey/sys-netology-hw/10-01-keepalived-vrrp/img/01-1.png)
-![img](https://github.com/smutosey/sys-netology-hw/10-01-keepalived-vrrp/img/01-2.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/10-01-keepalived-vrrp/img/01-5.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/10-01-keepalived-vrrp/img/01-1.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/10-01-keepalived-vrrp/img/01-2.png)
 
 Конфигурация node-2
-![img](https://github.com/smutosey/sys-netology-hw/10-01-keepalived-vrrp/img/01-6.png)
-![img](https://github.com/smutosey/sys-netology-hw/10-01-keepalived-vrrp/img/01-3.png)
-![img](https://github.com/smutosey/sys-netology-hw/10-01-keepalived-vrrp/img/01-4.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/10-01-keepalived-vrrp/img/01-6.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/10-01-keepalived-vrrp/img/01-3.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/10-01-keepalived-vrrp/img/01-4.png)
 Если уронить node-1, то в логах сервиса keepalived на node-2 видно переключение на MASTER, и в интерфейсе появляется виртуальный IP
-![img](https://github.com/smutosey/sys-netology-hw/10-01-keepalived-vrrp/img/01-7.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/10-01-keepalived-vrrp/img/01-7.png)
 
 
 ---
@@ -40,13 +40,13 @@
 ### Ответ
 
 До выключения интерфейса ответы приходят от MASTER-ноды:
-![img](https://github.com/smutosey/sys-netology-hw/10-01-keepalived-vrrp/img/02-1.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/10-01-keepalived-vrrp/img/02-1.png)
 
 После выключения интерфейса на node-1 видны broadcast-пакеты с информацией о новом mac для IP:
-![img](https://github.com/smutosey/sys-netology-hw/10-01-keepalived-vrrp/img/02-2.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/10-01-keepalived-vrrp/img/02-2.png)
 
 И затем по ping-запросам возвращается информация уже с BACKUP-ноды:
-![img](https://github.com/smutosey/sys-netology-hw/10-01-keepalived-vrrp/img/02-3.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/10-01-keepalived-vrrp/img/02-3.png)
 
 ---
 

@@ -15,11 +15,11 @@
 
 > #### Ответ:
 > Поднял базу MySQL (для выполнения следующих заданий в курсе)
-> [Vagrantfile](https://github.com/smutosey/sys-netology-hw/12-01-databases/vagrant/Vagrantfile) + [config.sh](https://github.com/smutosey/sys-netology-hw/12-01-databases/vagrant/config.sh) для создания ВМ, установки Docker и запуска БД в контейнере  
-> [docker-compose.yml](https://github.com/smutosey/sys-netology-hw/12-01-databases/docker-compose.yml) - инструкции для запуска MySQL и инициализации БД  
+> [Vagrantfile](https://github.com/smutosey/sys-netology-hw/blob/main/12-01-databases/vagrant/Vagrantfile) + [config.sh](https://github.com/smutosey/sys-netology-hw/blob/main/12-01-databases/vagrant/config.sh) для создания ВМ, установки Docker и запуска БД в контейнере  
+> [docker-compose.yml](https://github.com/smutosey/sys-netology-hw/blob/main/12-01-databases/docker-compose.yml) - инструкции для запуска MySQL и инициализации БД  
 
 > Диаграмма БД:  
-> ![img](https://github.com/smutosey/sys-netology-hw/12-01-databases/img/1-01.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/12-01-databases/img/1-01.png)  
 > 
 > Сотрудники (  
 > - идентификатор сотрудника, первичный ключ, integer

@@ -2,8 +2,8 @@
 
 ---
 
-Для выполнения заданий 1-4 написал [Vagrantfile](https://github.com/smutosey/sys-netology-hw/09-04-prometheus-p1/Vagrantfile) 
-и файл provision [config.sh](https://github.com/smutosey/sys-netology-hw/09-04-prometheus-p1/config.sh)
+Для выполнения заданий 1-4 написал [Vagrantfile](https://github.com/smutosey/sys-netology-hw/blob/main/09-04-prometheus-p1/Vagrantfile) 
+и файл provision [config.sh](https://github.com/smutosey/sys-netology-hw/blob/main/09-04-prometheus-p1/config.sh)
 
 ---
 
@@ -16,7 +16,7 @@
 
 ### Ответ
 
-![img](https://github.com/smutosey/sys-netology-hw/09-04-prometheus-p1/img/01-1.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/09-04-prometheus-p1/img/01-1.png)
 
 ---
 
@@ -28,7 +28,7 @@
 
 ### Ответ
 
-![img](https://github.com/smutosey/sys-netology-hw/09-04-prometheus-p1/img/02-1.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/09-04-prometheus-p1/img/02-1.png)
 
 ---
 
@@ -41,10 +41,10 @@
 ### Ответ
 
 Status > Configuration:
-![img](https://github.com/smutosey/sys-netology-hw/09-04-prometheus-p1/img/03-1.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/09-04-prometheus-p1/img/03-1.png)
 
 Status > Targets
-![img](https://github.com/smutosey/sys-netology-hw/09-04-prometheus-p1/img/03-2.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/09-04-prometheus-p1/img/03-2.png)
 
 ---
 
@@ -56,7 +56,7 @@ Status > Targets
 
 ### Ответ
 
-![image](https://github.com/smutosey/sys-netology-hw/09-04-prometheus-p1/img/04-1.png)
+![image](https://github.com/smutosey/sys-netology-hw/blob/main/09-04-prometheus-p1/img/04-1.png)
 
 
 ---
@@ -69,4 +69,4 @@ Status > Targets
 
 ### Ответ
 
-![image](https://github.com/smutosey/sys-netology-hw/09-04-prometheus-p1/img/05-1.png)
+![image](https://github.com/smutosey/sys-netology-hw/blob/main/09-04-prometheus-p1/img/05-1.png)

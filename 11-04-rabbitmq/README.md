@@ -8,10 +8,10 @@
 *Итогом выполнения домашнего задания будет приложенный скриншот веб-интерфейса RabbitMQ.*
 
 > #### Ответ:
-> Я решил начать сразу с 4 задания, поэтому написал [Vagrantfile](https://github.com/smutosey/sys-netology-hw/11-04-rabbitmq/vagrant/Vagrantfile) для создания ВМ контроллера и 3х нод кластера, написал [плейбук с ролями](https://github.com/smutosey/sys-netology-hw/11-04-rabbitmq/rabbitmq/playbook.yml), в [инвентори](https://github.com/smutosey/sys-netology-hw/11-04-rabbitmq/rabbitmq/hosts.yml) 1 мастер и 2 воркера
+> Я решил начать сразу с 4 задания, поэтому написал [Vagrantfile](https://github.com/smutosey/sys-netology-hw/blob/main/11-04-rabbitmq/vagrant/Vagrantfile) для создания ВМ контроллера и 3х нод кластера, написал [плейбук с ролями](https://github.com/smutosey/sys-netology-hw/blob/main/11-04-rabbitmq/rabbitmq/playbook.yml), в [инвентори](https://github.com/smutosey/sys-netology-hw/blob/main/11-04-rabbitmq/rabbitmq/hosts.yml) 1 мастер и 2 воркера
 > 
 > Статус нод в UI RabbitMQ:
-> ![img](https://github.com/smutosey/sys-netology-hw/11-04-rabbitmq/img/1-01.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-04-rabbitmq/img/1-01.png) 
 
 ---
 
@@ -31,12 +31,12 @@
 
 
 > #### Ответ:
-> Немного [изменил](https://github.com/smutosey/sys-netology-hw/11-04-rabbitmq/scripts/) скрипты продюсера и консьюмера, очередь теперь "nedorezov", а также добавил credentials (чтобы логиниться не под guest), актуализировал вызов методов pika.   
+> Немного [изменил](https://github.com/smutosey/sys-netology-hw/blob/main/11-04-rabbitmq/scripts/) скрипты продюсера и консьюмера, очередь теперь "nedorezov", а также добавил credentials (чтобы логиниться не под guest), актуализировал вызов методов pika.   
 > Результат работы продюсера:      
-> ![img](https://github.com/smutosey/sys-netology-hw/11-04-rabbitmq/img/2-01.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-04-rabbitmq/img/2-01.png)  
 > 
 > Результат запуска консьюмера:  
-> ![img](https://github.com/smutosey/sys-netology-hw/11-04-rabbitmq/img/2-02.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-04-rabbitmq/img/2-02.png)  
 ---
 
 ### Задание 3. Подготовка HA кластера
@@ -57,19 +57,19 @@
 
 > #### Ответ:
 > Ноды в кластере всё те же:   
-> ![img](https://github.com/smutosey/sys-netology-hw/11-04-rabbitmq/img/3-01.png)   
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-04-rabbitmq/img/3-01.png)   
 > Политики:  
-> ![img](https://github.com/smutosey/sys-netology-hw/11-04-rabbitmq/img/3-02.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-04-rabbitmq/img/3-02.png) 
 > 
 > Вывод команды `rabbitmqctl cluster_status` с двух нод:  
-> ![img](https://github.com/smutosey/sys-netology-hw/11-04-rabbitmq/img/3-03.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-04-rabbitmq/img/3-03.png) 
 > 
 > Вывод команды `rabbitmqadmin get queue='hello'` с двух нод:  
-> ![img](https://github.com/smutosey/sys-netology-hw/11-04-rabbitmq/img/3-04.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-04-rabbitmq/img/3-04.png)  
 > 
 > Проверим доступность кластера. Вырубил сервис на 1ой ноде, успешно поймал сообщения консьюмером:  
-> ![img](https://github.com/smutosey/sys-netology-hw/11-04-rabbitmq/img/3-05.png)  
-> ![img](https://github.com/smutosey/sys-netology-hw/11-04-rabbitmq/img/3-06.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-04-rabbitmq/img/3-05.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-04-rabbitmq/img/3-06.png) 
 
 
 ### Задание 4*. Ansible playbook
@@ -80,14 +80,14 @@
 *Готовый плейбук разместите в своём репозитории.*
 
 > #### Ответ:  
-> Все ноды для выполнения заданий 1-3 разворачивал написанным мною [плейбуком](https://github.com/smutosey/sys-netology-hw/11-04-rabbitmq/rabbitmq/playbook.yml).
-В [инвентори](https://github.com/smutosey/sys-netology-hw/11-04-rabbitmq/rabbitmq/hosts.yml) для тест-окружения создал 1 мастер и 2 воркера. Плейбук адаптирован под ubuntu, протестирован на 20.04.  
+> Все ноды для выполнения заданий 1-3 разворачивал написанным мною [плейбуком](https://github.com/smutosey/sys-netology-hw/blob/main/11-04-rabbitmq/rabbitmq/playbook.yml).
+В [инвентори](https://github.com/smutosey/sys-netology-hw/blob/main/11-04-rabbitmq/rabbitmq/hosts.yml) для тест-окружения создал 1 мастер и 2 воркера. Плейбук адаптирован под ubuntu, протестирован на 20.04.  
 > Настройка выполняется 2мя ролями:  
 > - install_rabbitmq - выполняется на всех нодах. В тасках устанавливаются все необходимые пакеты, выполняются первичные настройки и обмен Erlang Cookie  
 > - cluster_setup - выполняется на воркерах для подключения к мастер-ноде в кластер, а также настройка политик.  
 >  
 > Результат запуска плейбука:  
-> ![img](https://github.com/smutosey/sys-netology-hw/11-04-rabbitmq/img/4-01.png)  
-> ![img](https://github.com/smutosey/sys-netology-hw/11-04-rabbitmq/img/4-02.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-04-rabbitmq/img/4-01.png)  
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-04-rabbitmq/img/4-02.png) 
 > Статус кластера:  
-> ![img](https://github.com/smutosey/sys-netology-hw/11-04-rabbitmq/img/4-03.png) 
+> ![img](https://github.com/smutosey/sys-netology-hw/blob/main/11-04-rabbitmq/img/4-03.png) 

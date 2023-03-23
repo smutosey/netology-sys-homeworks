@@ -47,10 +47,10 @@ Weighted Round Robin — тот же round robin, но имеет дополни
 
 ### Ответ
 
-ВМ для домашнего задания поднята с помощью [Vagrantfile](https://github.com/smutosey/sys-netology-hw/10-05-haproxy-nginx/Vagrantfile), все настройки для заданий 3-6 выполнены в provision [config.sh](https://github.com/smutosey/sys-netology-hw/10-05-haproxy-nginx/config.sh)
+ВМ для домашнего задания поднята с помощью [Vagrantfile](https://github.com/smutosey/sys-netology-hw/blob/main/10-05-haproxy-nginx/Vagrantfile), все настройки для заданий 3-6 выполнены в provision [config.sh](https://github.com/smutosey/sys-netology-hw/blob/main/10-05-haproxy-nginx/config.sh)
 
 Статус сервиса:
-![img](https://github.com/smutosey/sys-netology-hw/10-05-haproxy-nginx/img/03-1.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/10-05-haproxy-nginx/img/03-1.png)
 
 ---
 ---
@@ -64,7 +64,7 @@ Weighted Round Robin — тот же round robin, но имеет дополни
 ### Ответ
 
 Статус сервиса:
-![img](https://github.com/smutosey/sys-netology-hw/10-05-haproxy-nginx/img/04-1.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/10-05-haproxy-nginx/img/04-1.png)
 
 ---
 ---
@@ -102,7 +102,7 @@ sudo systemctl restart nginx
 ```
 
 Результат curl:
-![img](https://github.com/smutosey/sys-netology-hw/10-05-haproxy-nginx/img/05-1.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/10-05-haproxy-nginx/img/05-1.png)
 
 ---
 ---
@@ -145,4 +145,4 @@ sudo systemctl restart haproxy
 ```
 
 Результат curl:
-![img](https://github.com/smutosey/sys-netology-hw/10-05-haproxy-nginx/img/06-1.png)
+![img](https://github.com/smutosey/sys-netology-hw/blob/main/10-05-haproxy-nginx/img/06-1.png)
