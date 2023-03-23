@@ -1,0 +1,18 @@
+---
+- name: Install, run and enable "tuned"
+  hosts: all
+
+  tasks:
+  - name: Install packet "tuned"
+    ansible.builtin.apt:
+      name: tuned
+      state: present
+    become: true
+  
+  - name: Run daemon "tuned" and start it on boot
+    ansible.builtin.systemd:
+      name: tuned.service
+      state: started
+      enabled: true
+      daemon_reload: true
+    become: true

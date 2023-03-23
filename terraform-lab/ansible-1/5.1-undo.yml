@@ -1,0 +1,10 @@
+---
+- name: Undo - Load Kafka tar.gz and unarchive
+  hosts: all
+
+  tasks:
+  - name: Remove destination dir
+    ansible.builtin.file:
+      path: /tmp/kafka
+      state: absent
+

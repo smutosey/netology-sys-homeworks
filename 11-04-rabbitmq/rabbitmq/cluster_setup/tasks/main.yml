@@ -1,0 +1,22 @@
+---
+- name: Stopping RabbitMQ app
+  ansible.builtin.command: rabbitmqctl stop_app
+
+- name: Resetting RabbitMQ
+  ansible.builtin.command: rabbitmqctl reset
+
+- name: Joining RabbitMQ node to cluster
+  ansible.builtin.command: 'rabbitmqctl join_cluster rabbit@{{item}}'
+  with_items: '{{groups.master}}'
+
+- name: Starting RabbitMQ app
+  ansible.builtin.command: rabbitmqctl start_app
+
+- name: Getting cluster status
+  ansible.builtin.command: rabbitmqctl cluster_status
+  register: cluster_status
+
+- debug: var=cluster_status.stdout_lines
+
+- name: Setting cluster policy
+  ansible.builtin.command: rabbitmqctl set_policy ha-all "" '{"ha-mode":"all","ha-sync-mode":"automatic"}'

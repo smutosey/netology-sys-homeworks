@@ -1,0 +1,82 @@
+---
+- name: Set noninteractive
+  shell: export DEBIAN_FRONTEND=noninteractive
+
+- name: Apt update-upgrade
+  apt:
+    upgrade: yes
+    update_cache: yes
+
+- name: Install aptitude
+  apt:
+    name: aptitude
+    state: latest
+    update_cache: true
+
+- name: Uninstall old docker packages
+  apt:
+    pkg:
+      - docker 
+      - docker-engine
+      - docker.io
+      - containerd
+      - runc
+    state: absent
+
+- name: Install required system packages
+  apt:
+    pkg:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg
+      - lsb-release
+      - software-properties-common
+      - python3-pip 
+      - virtualenv
+      - python3-setuptools
+    state: latest
+    update_cache: true
+
+- name: Add Docker GPG apt Key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: Add Docker Repository
+  apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu jammy stable
+    state: present
+
+- name: Update apt and install docker-ce
+  apt:
+    name: 
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-compose-plugin
+    state: latest
+    update_cache: true
+
+- name: Install Docker Module for Python
+  pip:
+    name: docker
+
+- name: Add insecure registry to docker
+  shell: |
+    echo '{\n  "insecure-registries" : ["cicd-host:8082"]\n}' > /etc/docker/daemon.json
+
+- name: Restart docker
+  ansible.builtin.service:
+    name: docker
+    state: restarted
+    enabled: true
+
+- name: Set hosts 
+  shell: |
+    echo "192.168.56.11\tcicd-host\tcicd-host" >> /etc/hosts 
+
+- name: Add our User to Docker group
+  ansible.builtin.user:
+    name: user
+    groups: docker

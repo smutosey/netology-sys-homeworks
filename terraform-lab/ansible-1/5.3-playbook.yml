@@ -1,0 +1,11 @@
+---
+- name: Set motd
+  hosts: all
+
+  tasks:
+  - name: Set motd in file
+    ansible.builtin.copy:
+      content: "{{ hello }}"
+      dest: /etc/motd
+      force: true
+    become: true

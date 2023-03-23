@@ -1,0 +1,54 @@
+---
+- name: Add Jenkins GPG apt Key
+  apt_key:
+    url: https://pkg.jenkins.io/debian-stable/jenkins.io.key
+    state: present
+
+- name: Add Jenkins Repository
+  apt_repository:
+    repo: deb http://pkg.jenkins.io/debian-stable binary/
+    state: present  
+
+- name: Install Java
+  apt:
+    name: 
+      - openjdk-11-jre
+    state: latest
+    update_cache: true
+
+- name: Install Jenkins
+  apt:
+    name: 
+      - jenkins
+      - fontconfig
+    state: latest
+    update_cache: true
+
+- name: Add Jenkins to Docker group
+  ansible.builtin.user:
+    name: jenkins
+    groups: docker
+
+- name: Download GO and unarchive
+  ansible.builtin.unarchive:
+    src: https://go.dev/dl/go1.17.5.linux-amd64.tar.gz
+    dest: /usr/local
+    remote_src: yes
+
+- name: Set PATH
+  shell: |
+    echo 'export PATH=$PATH:/usr/local/go/bin' >> /etc/profile
+
+- name: Allow all access to tcp port 8080
+  community.general.ufw:
+    rule: allow
+    port: '8080'
+    proto: tcp
+
+- name: Get Jenkins admin password content
+  shell: cat /var/lib/jenkins/secrets/initialAdminPassword
+  register: password
+
+- name: Print to console Jenkins admin password
+  debug:
+    msg: "Jenkins admin password: {{password.stdout}}"

@@ -1,0 +1,6 @@
+---
+- hosts: cicd
+  roles:
+    - docker-role
+    - jenkins-role
+    - nexus-role

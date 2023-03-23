@@ -1,0 +1,103 @@
+---
+- ansible.builtin.lineinfile:
+    dest: /etc/hosts
+    regexp: '.*{{item}}$'
+    line: '{{hostvars[item].ansible_eth1.ipv4.address}} {{item}}'
+    state: present
+  with_items: "{{groups['all']}}"
+
+
+- name: Install prerequisites
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    update_cache: yes
+    state: present
+  with_items:
+   - curl
+   - ca-certificates
+   - apt-transport-https
+   - software-properties-common
+
+- name: Add RabbitMQ GPG keys (Cloudsmith)
+  ansible.builtin.apt_key:
+    url: "{{ item }}"
+    state: present
+  with_items:
+    - https://keys.openpgp.org/vks/v1/by-fingerprint/0A9AF2115F4687BD29803A206B73A36E6026DFCA
+    - https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/gpg.E495BB49CC4BBE5B.key
+    - https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-server/gpg.9F4587F226208342.key
+
+- name: Add RabbitMQ APT repositories (Cloudsmith)
+  ansible.builtin.apt_repository:
+    repo: "{{ item }}"
+    state: present
+  with_items:
+    - 'deb https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/deb/ubuntu bionic main'
+    - 'deb-src https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/deb/ubuntu bionic main'
+    - 'deb https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-server/deb/ubuntu bionic main'
+    - 'deb-src https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-server/deb/ubuntu bionic main'
+
+- name: Install RabbitMQ from Cloudsmith repos
+  ansible.builtin.apt:
+    name: "{{ item }}"
+  with_items:
+    - erlang-base
+    - erlang-asn1
+    - erlang-crypto
+    - erlang-eldap
+    - erlang-ftp
+    - erlang-inets
+    - erlang-mnesia
+    - erlang-os-mon
+    - erlang-parsetools
+    - erlang-public-key
+    - erlang-runtime-tools
+    - erlang-snmp
+    - erlang-ssl
+    - erlang-syntax-tools
+    - erlang-tftp
+    - erlang-tools
+    - erlang-xmerl
+    - rabbitmq-server
+
+- name: Enable rabbitmq plugins
+  community.rabbitmq.rabbitmq_plugin:
+    names: rabbitmq_management,rabbitmq_tracing,rabbitmq_federation
+    state: enabled
+  notify:
+  - restart rabbitmq
+
+- name: Add user RabbitMQ
+  community.rabbitmq.rabbitmq_user:
+    user: admin
+    password: "{{ ADMIN_PASS }}"
+    tags: administrator,admin
+    vhost: /
+    configure_priv: .*
+    write_priv: .*
+    read_priv: .*
+    state: present
+
+- name: Capturing Erlang Cookie On Master
+  ansible.builtin.command: "cat {{ rabbitmq_erlang_cookie_file }}"
+  register: "rabbitmq_erlang_cookie"
+  when: inventory_hostname in groups['master']
+
+- name: Setting Erlang Cookie Of Master on Non-Master
+  ansible.builtin.set_fact:
+    rabbitmq_erlang_cookie: "{{ hostvars[item]['rabbitmq_erlang_cookie']['stdout'] }}"
+  when: inventory_hostname in groups['workers']
+  with_items: "{{groups['master']}}"
+
+- name: Copy erlang cookie
+  ansible.builtin.template:
+    src: erlang.cookie.j2
+    dest: "{{ rabbitmq_erlang_cookie_file }}"
+    owner: rabbitmq
+    group: rabbitmq
+    mode: 0400
+    # backing up in case the need to recover
+    backup: yes
+  when: inventory_hostname in groups['workers']
+  notify:
+  - restart rabbitmq

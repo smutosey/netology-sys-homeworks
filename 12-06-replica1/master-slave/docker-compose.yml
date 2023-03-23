@@ -1,0 +1,47 @@
+version: '3.5'
+
+services:
+  master-one:
+    image: mysql
+    container_name: master-one
+    ports:
+      - 3306:3306
+    volumes:
+      - volume-one:/var/lib/mysql
+      - ./master.cnf:/etc/my.cnf
+    command: --default-authentication-plugin=mysql_native_password
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: netology1206
+      MYSQL_USER: nedorezov
+      MYSQL_PASSWORD: 1
+    networks:
+      - replica
+  
+  slave-one:
+    image: mysql
+    container_name: slave-one
+    depends_on:
+      - master-one
+    ports:
+      - 3307:3306
+    volumes:
+      - volume-two:/var/lib/mysql
+      - ./slave.cnf:/etc/my.cnf
+    command: --default-authentication-plugin=mysql_native_password
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: netology1206
+      MYSQL_USER: nedorezov
+      MYSQL_PASSWORD: 1
+    networks:
+      - replica
+
+volumes:
+  volume-one: 
+  volume-two: 
+
+networks:
+  replica:

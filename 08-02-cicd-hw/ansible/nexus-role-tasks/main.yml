@@ -1,0 +1,44 @@
+---
+- name: Pull default Nexus
+  community.docker.docker_image:
+    name: sonatype/nexus3
+    source: pull
+
+- name: Create a directory nexus-data
+  ansible.builtin.file:
+    path: /nexus-data
+    state: directory
+
+- name: Owner to volume
+  shell: chown -R 200 /nexus-data
+
+- name: Create Nexus containers
+  community.docker.docker_container:
+    name: nexus
+    image: sonatype/nexus3
+    state: started
+    ports:
+      - "8081:8081"
+      - "8082:8082"
+    volumes:
+      - /nexus-data:/nexus-data
+    env:
+        INSTALL4J_ADD_VM_PARAMS: "-Xms512m -Xmx512m -XX:MaxDirectMemorySize=273m"
+
+- name: Allow all access to tcp port 8081
+  community.general.ufw:
+    rule: allow
+    port: '8081'
+    proto: tcp
+
+- name: Pause for 5 minutes to start service
+  ansible.builtin.pause:
+    minutes: 2
+
+- name: Get Nexus admin password 
+  shell: cat /nexus-data/admin.password
+  register: password
+
+- name: Print to console Nexus admin password
+  debug:
+    msg: "Nexus password: {{password.stdout}}"

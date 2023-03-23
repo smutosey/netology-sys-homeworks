@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html><body>
+<h1>Hostname: {{ ansible_facts['hostname'] }}</h1>
+<p>CPU info: {{ ansible_facts['processor'][5] }}, vcpus: {{ ansible_facts['processor_vcpus'] }}</p>
+<p>MEM total: {{ ansible_facts['memtotal_mb'] }} MB</p>
+<p>DISK: {{ ansible_facts['devices']['vda']['partitions']['vda2']['size'] }}</p>
+<p>IP: {{ ansible_facts['default_ipv4']['address'] }}</p>
+</body></html>

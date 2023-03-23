@@ -1,0 +1,5 @@
+- module: mongodb
+  # All logs
+  log:
+    enabled: true
+    var.paths: ["/var/log/mongodb/*.log"]

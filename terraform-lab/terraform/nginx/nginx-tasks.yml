@@ -1,0 +1,46 @@
+---
+- name: Install packet "nginx"
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+
+- name: Delete nginx default config
+  ansible.builtin.file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+
+- name: Set index.html from template
+  ansible.builtin.template:
+    src: nginx.html.j2
+    dest: /var/www/html/nginx.html
+
+- name: Set nginx site config
+  ansible.builtin.copy:
+    src: my-nginx.conf
+    dest: /etc/nginx/sites-available/my-nginx.conf
+    owner: root
+    mode: '0644'
+
+- name: Add nginx site config to enabled
+  ansible.builtin.file:
+    src: /etc/nginx/sites-available/my-nginx.conf
+    dest: /etc/nginx/sites-enabled/my-nginx.conf
+    state: link
+
+- name: Run daemon "nginx" and start it on boot
+  ansible.builtin.systemd:
+    name: nginx.service
+    state: restarted
+    enabled: true
+    daemon_reload: true
+
+- name: Allow all access to tcp port 80
+  community.general.ufw:
+    rule: allow
+    port: '80'
+    proto: tcp
+
+- name: Check connection to a NGINX page and it returns a status 200
+  ansible.builtin.uri:
+    url: http://localhost
+

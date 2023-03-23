@@ -1,0 +1,16 @@
+---
+- name: Set motd
+  hosts: all
+
+  tasks:
+  - name: Set motd script
+    ansible.builtin.copy:
+      content: |
+        #!/bin/sh
+        IP_ADDRESS=$(ip a s eth0 | grep inet | awk '{ print $2 }' | head -1)
+        printf "Welcome to %s! My IP-address: %s\n" "$(hostname)" "$IP_ADDRESS"
+        printf "...Hey you, SYSADMIN! Have a nice day!"
+      dest: /etc/update-motd.d/01-hello
+      mode: "0755"
+      force: true
+    become: true
